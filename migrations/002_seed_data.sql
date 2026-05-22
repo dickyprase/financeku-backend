@@ -1,16 +1,5 @@
 -- FinanceKu Seed Data
-
--- Default admin user (password: admin123)
-INSERT INTO users (id, name, email, password, role, salary, meal_allowance)
-VALUES (
-    'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
-    'Admin',
-    'admin@financeku.com',
-    '$2b$10$7otIdbN6PsItOq2GMxvIaOYoBa5e3YtAvy2Szg4Nb9sAFu9H6N5zW',
-    'admin',
-    5000000,
-    30000
-) ON CONFLICT (email) DO NOTHING;
+-- Note: Admin user is created in migrate.ts with runtime bcrypt hash
 
 -- Default income categories
 INSERT INTO categories (name, type, icon, color, is_default) VALUES
